@@ -30,4 +30,10 @@ public interface LogService {
      * @return
      */
     PageInfo<LogDomain> getLogs(int pageNum, int pageSize);
+
+    /**
+     * 保存日志
+     * @param logDomain
+     */
+    void saveLog(LogDomain logDomain);
 }

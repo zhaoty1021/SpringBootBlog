@@ -8,7 +8,7 @@
 
     <!--基本列-->
     <sql id="BASE_COLUMN">
-        l.id, l.action, l.data, l.authorId, l.ip, l.created
+        l.id, l.action, l.data, l.authorId, l.ip, l.created ,l.cost,l.method
     </sql>
 
     <!--添加日志-->
@@ -16,14 +16,17 @@
         INSERT INTO
           <include refid="BASE_TABLE"/>
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            action, data, authorId, ip, created,
+            action, data, authorId, ip, created, cost, method
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             #{action, jdbcType=VARCHAR},
             #{data, jdbcType=VARCHAR},
             #{authorId, jdbcType=INTEGER},
             #{ip, jdbcType=VARCHAR},
-            UNIX_TIMESTAMP(NOW())
+            #{created,jdbcType=TIMESTAMP},
+            #{cost,jdbcType=DECIMAL},
+            #{method,jdbcType=VARCHAR}
+
         </trim>
     </insert>
 

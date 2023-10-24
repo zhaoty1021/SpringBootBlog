@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 50722
  Source Host           : localhost:3306
- Source Schema         : lu_tale
+ Source Schema         : blog_test
 
  Target Server Type    : MySQL
  Target Server Version : 50722
@@ -128,18 +128,18 @@ CREATE TABLE `t_options`  (
   PRIMARY KEY (`name`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('baidu_site_verification', '无', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('google_site_verification', '无', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('site_description', 'KyrieCao的博客', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('site_record', '无', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('site_title', 'KyrieCao', 'KyrieCao');
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('social_csdn', 'https://blog.csdn.net/qq_22067469', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('social_github', 'https://github.com/caozongpeng', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('social_jianshu', 'https://www.jianshu.com/', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('social_resume', '', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('social_twitter', '', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('social_weibo', 'https://weibo.com/', NULL);
-INSERT INTO lu_tale.t_options (name, value, description) VALUES('social_zhihu', 'https://www.zhihu.com/', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('baidu_site_verification', '无', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('google_site_verification', '无', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('site_description', 'KyrieCao的博客', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('site_record', '无', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('site_title', 'KyrieCao', 'KyrieCao');
+INSERT INTO blog_test.t_options (name, value, description) VALUES('social_csdn', 'https://blog.csdn.net/qq_22067469', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('social_github', 'https://github.com/caozongpeng', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('social_jianshu', 'https://www.jianshu.com/', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('social_resume', '', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('social_twitter', '', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('social_weibo', 'https://weibo.com/', NULL);
+INSERT INTO blog_test.t_options (name, value, description) VALUES('social_zhihu', 'https://www.zhihu.com/', NULL);
 
 
 -- ----------------------------

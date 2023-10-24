@@ -1,6 +1,7 @@
 package com.wip.controller.admin;
 
 import com.github.pagehelper.PageInfo;
+import com.wip.aop.BlogLog;
 import com.wip.api.QiNiuCloudService;
 import com.wip.constant.ErrorConstant;
 import com.wip.constant.LogActions;
@@ -115,6 +116,7 @@ public class AttachController extends BaseController {
     @ApiOperation("删除文件")
     @PostMapping(value = "/delete")
     @ResponseBody
+    @BlogLog("删除文件")
     public APIResponse deleteFileInfo(
             HttpServletRequest request,
             @ApiParam(name = "id", value = "文件主键", required = true)

@@ -13,6 +13,7 @@ import com.wip.service.log.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,6 +34,7 @@ public class LogServiceImpl implements LogService {
         logDomain.setIp(ip);
         logDomain.setData(data);
         logDomain.setAction(action);
+        logDomain.setCreated(new Date());
         logDao.addLog(logDomain);
     }
 
@@ -42,5 +44,10 @@ public class LogServiceImpl implements LogService {
         List<LogDomain> logs = logDao.getLogs();
         return new PageInfo<>(logs);
 
+    }
+
+    @Override
+    public void saveLog(LogDomain logDomain) {
+        logDao.addLog(logDomain);
     }
 }

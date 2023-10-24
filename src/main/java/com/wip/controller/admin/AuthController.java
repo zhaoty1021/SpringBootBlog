@@ -1,5 +1,6 @@
 package com.wip.controller.admin;
 
+import com.wip.aop.BlogLog;
 import com.wip.constant.LogActions;
 import com.wip.constant.WebConst;
 import com.wip.controller.BaseController;
@@ -49,6 +50,7 @@ public class AuthController extends BaseController {
     @ApiOperation("登录")
     @PostMapping(value = "/login")
     @ResponseBody
+    @BlogLog("登录后台")
     public APIResponse toLogin(
             HttpServletRequest request,
             HttpServletResponse response,
@@ -73,7 +75,7 @@ public class AuthController extends BaseController {
                 TaleUtils.setCookie(response, userInfo.getUid());
             }
             // 写入日志
-            logService.addLog(LogActions.LOGIN.getAction(), userInfo.getUsername()+"用户", request.getRemoteAddr(), userInfo.getUid());
+            //logService.addLog(LogActions.LOGIN.getAction(), userInfo.getUsername()+"用户", request.getRemoteAddr(), userInfo.getUid());
         } catch (Exception e) {
             LOGGER.error(e.getMessage());
             errorCount = null == errorCount ? 1 : errorCount + 1;
